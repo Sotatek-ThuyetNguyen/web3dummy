@@ -1,0 +1,23 @@
+.btn {
+  border: unset;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-connect {
+  background-color: #4b96c5;
+  color: #fff;
+  width: 220px;
+}
+
+.btn-harvest {
+  background-color: #48c5aa;
+  color: #fff;
+}
+
+.btn-approve {
+  background-color: #2f70d1;
+  color: #fff;
+  width: 220px;
+}
