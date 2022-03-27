@@ -8,7 +8,7 @@ import { Web3Provider } from '@ethersproject/providers';
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://api.thegraph.com/subgraphs/name/sotatek-thuyetnguyen/masterchefef",
+  uri: "https://api.thegraph.com/subgraphs/name/sotatek-thuyetnguyen/masterchef",
   cache: new InMemoryCache()
 });
 
