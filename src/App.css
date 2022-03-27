@@ -69,11 +69,5 @@ table {
 
 table, th, td {
   border: 1px dashed;
-}
-
-tr > td:nth-child(1) {
-  padding-left: 24px;
-}
-tr > td:nth-child(2), tr > td:nth-child(3) {
   text-align: center;
 }

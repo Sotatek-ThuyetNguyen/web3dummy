@@ -121,7 +121,7 @@ function App() {
   }
 
   const { data, loading, error } = useQuery(FILMS_QUERY);
-  const nooooooooo = async () => {
+  const getHistory = async () => {
     if (error) return <pre>{error.message}</pre>
     if (!loading && data) {
       let histories = data.exampleEntities.filter(r => r.user === account.toLowerCase())
@@ -140,7 +140,7 @@ function App() {
       getTokenStaked()
       getTotalStaked()
       allowance()
-      nooooooooo()
+      getHistory()
     }
   }, [account])
 
@@ -187,26 +187,32 @@ function App() {
           </div>
 
           <div className='p2'>
-            <table>
-              <thead>
-                <tr>
-                  <th>Event</th>
-                  <th>Amount</th>
-                  <th>Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  histories.map(h => (
-                    <tr>
-                      <td>{ h.type }</td>
-                      <td>{ web3.utils.fromWei(h.amount) }</td>
-                      <td>{ h.date }</td>
-                    </tr>
-                  ))
-                }
-              </tbody>
-            </table>
+            {
+              !loading ?
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Event</th>
+                    <th>Amount</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    histories.map((h, idx) => (
+                      <tr>
+                        <td>{ idx + 1 }</td>
+                        <td>{ h.type }</td>
+                        <td>{ web3.utils.fromWei(h.amount) }</td>
+                        <td>{ h.date }</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+              : null
+            }
           </div>
         </div>
         :
